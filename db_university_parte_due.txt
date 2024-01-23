@@ -21,9 +21,11 @@ GROUP BY
 3. SELECT * FROM `students` WHERE DATE(`date_of_birth`) < DATE('1994-01-22');
 4. SELECT * FROM `courses` WHERE `period` = 'I semestre' AND `year` = 1; 
 5. SELECT * FROM `exams` WHERE `date` = DATE('2020/06/20') AND HOUR(`hour`) >= HOUR("14:00:00"); 
+    SELECT * FROM `exams` WHERE `date` = DATE('2020/06/20') AND `hour` > '14:00:00' ;
 6. SELECT * FROM `degrees` WHERE `level` = 'magistrale'; 
 7. SELECT * FROM `departments` ;
 8. SELECT * FROM `teachers` WHERE `phone` IS NULL; 
+
 9. SELECT YEAR(`enrolment_date`), COUNT(*) FROM `students` GROUP BY YEAR(`enrolment_date`); 
 10. SELECT `office_address`, COUNT(*) FROM `teachers` GROUP BY `office_address`; 
 11. SELECT `exam_id`, AVG(`vote`) FROM `exam_student` GROUP BY `exam_id`; 
